@@ -1,0 +1,16 @@
+JAWABAN :
+
+a. Salah
+	Karena sebuah method tidak hanya mengembalikan nilai (return value) ke pemanggilnya.
+ 	
+b. Salah
+	Karena parameter di method dapat anonymous
+
+c. Benar
+	Jika tipe datanya tidak sama, maka ketika dijalankan akan error.
+	
+d. Benar
+	Karena parameter di method tidak wajib untuk satu parameter, dua sampe tiga pun bisa.
+	
+e. Salah
+	Karena satu method hanya memiliki satu return value.
