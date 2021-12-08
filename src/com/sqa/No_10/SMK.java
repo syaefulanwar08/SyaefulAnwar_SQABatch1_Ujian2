@@ -1,49 +1,38 @@
 package com.sqa.No_10;
 
-public class SMK implements ISekolah {
+public class SMK extends Sekolah {
 
-	String nama;
-	String alamat;
-	String jenjang;
+	private String nama;
+	private String alamat;
+	private String jenjang;
 	
-	public void SMK() {
-		
+	public SMK() {
+		System.out.println();
+		System.out.println("Sekolah SMK");
 	}
 
-	@Override
-	public void setNama() {
-		// TODO Auto-generated method stub
-		
+	public String getNama() {
+		return nama;
 	}
 
-	@Override
-	public void setAlamat() {
-		// TODO Auto-generated method stub
-		
+	public void setNama(String nama) {
+		this.nama = nama;
 	}
 
-	@Override
-	public void setJenjang() {
-		// TODO Auto-generated method stub
-		
+	public String getAlamat() {
+		return alamat;
 	}
 
-	@Override
-	public void getNama() {
-		// TODO Auto-generated method stub
-		
+	public void setAlamat(String alamat) {
+		this.alamat = alamat;
 	}
 
-	@Override
-	public void getAlamat() {
-		// TODO Auto-generated method stub
-		
+	public String getJenjang() {
+		return jenjang;
 	}
 
-	@Override
-	public void getJenjang() {
-		// TODO Auto-generated method stub
-		
+	public void setJenjang(String jenjang) {
+		this.jenjang = jenjang;
 	}
 	
 }

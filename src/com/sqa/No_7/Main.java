@@ -2,41 +2,37 @@ package com.sqa.No_7;
 
 class Tabungan {
 	private String namaNasabah;
-	private int nomer;
-	private int saldo;
-	private int jumlahSetor, jumlahTarik;
-	private int inSetor, inTarik;
+	private int noRek, jumlahSaldo;
 
-
-	Tabungan(String inputNamaNasabah, int inputNomer, int inputSaldo) {
+	Tabungan(String inputNamaNasabah, int inputNorek, int inputSaldo) {
 		namaNasabah = inputNamaNasabah;
-		nomer = inputNomer;
-		saldo = inputSaldo;	
+		this.noRek = inputNorek;
+		this.jumlahSaldo = inputSaldo;	
     }
 	
-	public void cekSaldo() {
-		saldo += inSetor;
-		saldo -= inTarik;
-		
-		System.out.println("Saldo anda saat ini adalah "+ saldo);
+	Tabungan(String inputNamaNasabah, int inputNorek) {
+		namaNasabah = inputNamaNasabah;
+		this.noRek = inputNorek;
+    }
+	
+	public void cekSaldo() {		
+		System.out.println("Saldo anda saat ini adalah "+ this.jumlahSaldo);
 	}
 
 	public void setor(int inputSetor) {
 		// TODO Auto-generated method stub
-		inSetor = inputSetor;
-		jumlahSetor = saldo + inSetor;
-		System.out.println("Setoran sebesar "+ inSetor +" berhasil dilakukan, saldo anda sekarang "+ jumlahSetor);
+		this.jumlahSaldo += inputSetor;
+		System.out.println("Setoran sebesar "+ inputSetor +" berhasil dilakukan, saldo anda sekarang "+ this.jumlahSaldo);
 	}
 	
 	public void tarik(int inputTarik) {
 		// TODO Auto-generated method stub
-		inTarik = inputTarik;
-		if (inTarik <= saldo) {
-			jumlahTarik = saldo - inTarik;
-			System.out.println("Penarikan sebesar "+ inTarik +" berhasil dilakukan, saldo anda sekarang "+ jumlahTarik);
-		} else if (inTarik == saldo) {
-			jumlahTarik = saldo - inTarik;
-			System.out.println("Penarikan sebesar "+ inTarik +" berhasil dilakukan, saldo anda sekarang "+ jumlahTarik);
+		if (inputTarik <= this.jumlahSaldo) {
+			this.jumlahSaldo -= inputTarik;
+			System.out.println("Penarikan sebesar "+ inputTarik +" berhasil dilakukan, saldo anda sekarang "+ this.jumlahSaldo);
+		} else if (inputTarik == this.jumlahSaldo) {
+			this.jumlahSaldo -= inputTarik;
+			System.out.println("Penarikan sebesar "+ inputTarik +" berhasil dilakukan, saldo anda sekarang "+ this.jumlahSaldo);
 		}
 		else {
 			System.out.println("Penarikan tidak dapat dilakukan karena saldo anda tidak cukup");
@@ -57,7 +53,7 @@ public class Main {
 			simpedes.cekSaldo();
 			System.out.println();
 			
-			Tabungan tabanas = new Tabungan ("Hindun",90, 0);
+			Tabungan tabanas = new Tabungan ("Hindun",90);
 			tabanas.cekSaldo();
 			tabanas.tarik(10000);
 			tabanas.tarik(1000);
